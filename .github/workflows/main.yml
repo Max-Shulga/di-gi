@@ -1,27 +1,29 @@
 name: Deploy
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+
 jobs:
   build:
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: main
-            fetch-depth: 10
-            submodules: true
+          ref: main
+          fetch-depth: 10
+          submodules: true
 
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.4.7
         with:
-              source: ./#source/scss/style.scss #I have removed the / in /src and it is still failing
-              destination:  ./style.css 
+          source: src/scss/style.scss
+          destination: src/style.css
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-            heroku_api_key: ${{secrets.GITHUB_TOKEN}}
-            heroku_app_name: "di0gi" #Must be unique in Heroku
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
