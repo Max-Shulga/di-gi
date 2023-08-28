@@ -317,7 +317,7 @@ body {
 
     .slick-next {
       @media (min-width: 600px) {
-        background: $main-blue-color url(../images/icons/arrow-right.png) center center no-repeat;
+        background: $main-blue-color url(images/icons/arrow-right.png) center center no-repeat;
         transform: translateY(-100%);
         z-index: 2;
       }
@@ -325,7 +325,7 @@ body {
 
     .slick-prev {
       @media (min-width: 600px) {
-        background: $main-white-color url(../images/icons/arrow-left.png) center center no-repeat;
+        background: $main-white-color url(images/icons/arrow-left.png) center center no-repeat;
         margin-top: 1px;
         z-index: 2;
       }
@@ -637,19 +637,19 @@ body {
         text-align: center;
 
         .portfolio-1 {
-          background: url(../images/portfolio-1.png) 100%/cover no-repeat;
+          background: url(images/portfolio-1.png) 100%/cover no-repeat;
         }
 
         .portfolio-2 {
-          background: url(../images/portfolio-2.png) 100%/cover no-repeat;
+          background: url(images/portfolio-2.png) 100%/cover no-repeat;
         }
 
         .portfolio-3 {
-          background: url(../images/portfolio-3.png) 100%/cover no-repeat;
+          background: url(images/portfolio-3.png) 100%/cover no-repeat;
         }
 
         .portfolio-4 {
-          background: url(../images/portfolio-4.png) 100%/cover no-repeat;
+          background: url(images/portfolio-4.png) 100%/cover no-repeat;
         }
 
         & > div {
@@ -1201,7 +1201,7 @@ body {
         display: inline-block;
         width: 22px;
         height: 14px;
-        background: url(../images/icons/arrow-top.svg) 100% no-repeat;
+        background: url(images/icons/arrow-top.svg) 100% no-repeat;
         position: absolute;
         top: 200%;
         left: 50%;
