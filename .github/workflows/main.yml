@@ -19,8 +19,8 @@ jobs:
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.4.7
         with:
-          source: src/scss/style.scss
-          destination: src/style.css
+          source: scss/style.scss
+          destination: style.css
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
