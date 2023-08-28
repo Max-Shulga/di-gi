@@ -19,7 +19,7 @@ jobs:
         uses: gha-utilities/sass-build@v0.4.7
         with:
               source: ./#source/scss/style.scss #I have removed the / in /src and it is still failing
-              destination:  ./src/style.css 
+              destination:  ./style.css 
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
