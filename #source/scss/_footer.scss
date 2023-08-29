@@ -1,0 +1,131 @@
+@import "constants";
+@import "mixins";
+@import "placeholders";
+
+
+.footer {
+  background: $main-blue-color;
+
+  .wrapper-1 {
+    padding-top: 70px;
+    height: 954px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+
+    @include small-tablet {
+      height: 632px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 230px;
+      height: 60px;
+      background: $main-blue-color url(../../images/logo.png) center center no-repeat;
+      z-index: 1;
+    }
+
+    .section-header {
+      @include text-styling($Roboto, 20px, 400, $main-white-color, 2px);
+      text-transform: none;
+      text-align: center;
+
+      @include small-tablet {
+        @include set-size-auto-line-height(24px);
+        align-self: flex-start;
+        text-align: left;
+      }
+
+      @include medium-tablet {
+        font-size: 36px;
+        line-height: 32px;
+      }
+
+      @include desktop {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  .social-links {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    @include small-tablet {
+      grid-template-rows: none;
+      grid-template-columns: repeat(4, 25%);
+    }
+  }
+
+  .link {
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include small-tablet {
+      border: 1px solid #7EBF84;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .contacts {
+    width: 100%;
+    list-style-type: none;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    gap: 2em;
+
+    @include small-tablet {
+      grid-template-rows: none;
+      grid-template-columns: repeat(4, 25%);;
+      justify-items: baseline;
+    }
+  }
+
+  .contacts-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    .section-header {
+      @include text-styling($Roboto-Condensed, 18px, 700, $main-white-color, 2px);
+
+      @include desktop {
+        font-size: 16px;
+      }
+    }
+
+    .content-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+
+      * {
+        text-decoration: none;
+        color: $main-white-color;
+      }
+
+      @include small-tablet {
+        align-items: flex-start;
+      }
+    }
+  }
+}

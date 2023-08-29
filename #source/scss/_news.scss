@@ -1,0 +1,121 @@
+@import "constants";
+@import "mixins";
+@import "placeholders";
+
+.news {
+  background: #F9F6E5;
+
+  .wrapper-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .line {
+    @include line(50px, $main-blue-color);
+    margin-bottom: 50px;
+    @include small-tablet {
+      width: 100px;
+    }
+  }
+
+  .section-header {
+    @include text-styling($Roboto-Condensed, 24px, 400, $main-black-color);
+    margin-top: 50px;
+    text-align: center;
+
+    @include small-tablet {
+      font-size: 48px;
+    }
+
+    @include medium-tablet {
+      font-size: 36px;
+    }
+
+    @include large-tablet {
+      font-size: 48px;
+    }
+  }
+}
+
+.news-container {
+  margin: 0 auto;
+  columns: 1;
+  column-gap: 20px;
+
+  @include small-tablet {
+    columns: 2;
+  }
+
+  @include large-tablet {
+    columns: 3;
+  }
+
+  @include desktop {
+    columns: 4;
+  }
+}
+
+.news-text-box {
+  background: $main-white-color;
+  @include text-styling($Roboto-Condensed, 18px, 700, $main-black-color, 2px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding-left: 20px;
+  align-items: center;
+  height: 40px;
+  border-radius: 0 0 4px 4px;
+}
+
+
+
+.news-element {
+  .news-icon {
+    display: none;
+  }
+  width: 100%;
+  margin-bottom: 40px;
+  break-inside: avoid;
+  position: relative;
+
+  &:hover {
+    transition-duration: 0.5s;
+    outline: 7px solid $main-blue-color;
+    outline-offset: -7px;
+    border-radius: 4px;
+
+    .news-icon  {
+      transition-duration: 0.5s;
+      display: block;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+    }
+
+    .news-text-box {
+      transition-duration: 1s;
+      background: $main-blue-color;
+      bottom: 10%;
+      color: $main-white-color;
+    }
+  }
+}
+
+.news-image {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+
+
+
+
+
