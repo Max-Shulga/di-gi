@@ -1,0 +1,46 @@
+@import "constants";
+@import "mixins";
+@import "placeholders";
+
+.to-menu {
+  height: 142px;
+
+  @include small-tablet {
+    height: 42px;
+  }
+
+  .wrapper-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include small-tablet {
+      justify-content: flex-end;
+    }
+
+    a {
+      @include text-styling($Roboto-Condensed, 16px, 400, $main-black-color, 2px);
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 14px;
+        background: url(images/icons/arrow-top.svg) 100% no-repeat;
+        position: absolute;
+        top: 200%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include small-tablet {
+          left: 150%;
+          top: 0;
+        }
+      }
+    }
+  }
+}

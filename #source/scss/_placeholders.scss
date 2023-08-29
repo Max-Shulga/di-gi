@@ -1,0 +1,12 @@
+%hover {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  box-shadow: 1px 1px #000000;
+  filter: brightness(0.8)
+}
+
+%active {
+  position: relative;
+  left: 1px;
+  top: 1px;
+}

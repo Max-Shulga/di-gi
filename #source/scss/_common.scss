@@ -1,0 +1,21 @@
+@import "constants";
+body {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.common-wrapper {
+  max-width: $section-max-width;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.wrapper-1 {
+  @extend .common-wrapper;
+  padding: 25px 30px;
+}
+
+.wrapper-2 {
+  @extend .common-wrapper;
+}

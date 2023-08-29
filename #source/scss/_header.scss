@@ -1,0 +1,317 @@
+@import "constants";
+@import "mixins";
+@import "placeholders";
+
+%grey {
+  background-color: rgba(33, 33, 33, 0.5);
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/*style block responsible for the upper header part*/
+.up-header-part {
+  background: $main-blue-color;
+
+  .wrapper-1 {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include small-tablet {
+      height: 100px;
+    }
+
+    /*button*/
+    .menu {
+      width: 40px;
+      height: 40px;
+      background: $main-white-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10%;
+      border-radius: 4px;
+
+      .menu-button {
+        cursor: pointer;
+        border: none;
+        background: none;
+
+      }
+
+      &:hover {
+        @extend %hover;
+      }
+
+      &:active {
+        @extend %active;
+      }
+    }
+  }
+}
+
+/*style block responsible for the main header part*/
+
+.main-header-part {
+  position: relative;
+
+  .slick-list {
+    overflow: hidden;
+  }
+
+
+  .slick-track {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main-header-container {
+    height: 193px;
+
+    @include small-tablet {
+      height: 368px;
+    }
+    @include medium-tablet {
+      height: 465px;
+    }
+
+    @include large-tablet {
+      height: 623px;
+    }
+
+    @include desktop {
+      height: 668px;
+    }
+    position: relative;
+  }
+
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .slider-item {
+    position: relative;
+    /*style block responsible for the main part of the header*/
+
+    @extend %grey ;
+
+    .wrapper-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+
+    /*h1 tag*/
+    .header-main-text {
+      width: 50%;
+      @include text-styling($Roboto-Condensed, 28px, 400, $main-white-color, 2px);
+      text-transform: uppercase;
+
+      @include small-tablet {
+        font-size: 60px;
+        line-height: 60px;
+      }
+
+      @include large-tablet {
+        font-size: 86px;
+        line-height: 86px;
+      }
+
+      @include desktop {
+        font-size: 96px;
+        line-height: 96px;
+      }
+    }
+
+    /*p tag*/
+    .header-text {
+      display: none;
+
+      @include medium-tablet {
+        width: 70%;
+        display: inline-block;
+        @include text-styling($Roboto-Condensed, 18px, 400, $main-white-color);
+      }
+
+      @include desktop {
+        @include set-size-auto-line-height(24px)
+      }
+    }
+
+    /*hr -tag*/
+    .line {
+      @include line(100px, $main-black-color);
+
+      @include medium-tablet {
+        display: none;
+      }
+
+    }
+
+    /*button - more info*/
+    .subject-button {
+      display: none;
+
+      @include small-tablet {
+        @include button-preset(200px, 50px, $main-blue-color);
+      }
+    }
+
+    /*button text*/
+    .subject-link {
+      @include text-styling($Roboto, 18px, 400px, $main-white-color);
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 auto;
+    }
+  }
+
+  .slick-dots {
+    width: 70px;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    bottom: 7%;
+    left: 50%;
+    transform: translatex(-50%);
+    padding: 0 5px;
+
+    li {
+      background: $main-blue-color;
+      border-radius: 50%;
+      font-size: 0;
+      height: 12px;
+      width: 12px;
+      border: none;
+    }
+
+    .slick-active {
+      border: 1px solid $main-white-color;;
+      background: transparent !important;
+    }
+  }
+  .slick-arrow {
+    display: none !important;
+
+    &:hover {
+      @extend %hover;
+    }
+
+    @include small-tablet {
+      display: block !important;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 70px;
+      height: 70px;
+      border: none;
+
+
+    }
+  }
+
+  .slick-next {
+    @media (min-width: 600px) {
+      background: $main-blue-color url(images/icons/arrow-right.png) center center no-repeat;
+      transform: translateY(-100%);
+      z-index: 2;
+    }
+  }
+
+  .slick-prev {
+    @media (min-width: 600px) {
+      background: $main-white-color url(images/icons/arrow-left.png) center center no-repeat;
+      transform: translateY(0);
+      margin-top: 1px;
+      z-index: 2;
+    }
+  }
+}
+
+/*style block responsible for the main bottom of the header*/
+.bot-header-part {
+  background: $main-blue-color;
+  height: 300px;
+
+  @include small-tablet {
+    height: 254px;
+  }
+
+  @include medium-tablet {
+    height: 187px;
+  }
+
+  @include large-tablet {
+    height: 160px;
+  }
+
+  @include desktop {
+    height: 192px;
+  }
+
+  .wrapper-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 30px;
+
+    @include medium-tablet {
+      flex-direction: row;
+    }
+
+    /*style for text block*/
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
+
+      @include medium-tablet {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+
+    .bot-header-text-1 {
+      @include text-styling($Roboto, 24px, 500, $main-white-color);
+    }
+
+    .bot-header-text-2 {
+      @include text-styling($Dosis, 16px, 300, $main-white-color);
+    }
+  }
+
+
+  /*style for button*/
+  .call-to-us-button {
+    @include button-preset(200px, 50px, $main-white-color);
+  }
+
+  /*button text*/
+  .call-to-us-button-text {
+    @include text-styling($Roboto, 18px, 600, $main-blue-color);
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+
+
+

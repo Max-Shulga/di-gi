@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;700&family=Oswald&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+@import "constants";
+@import "placeholders";
+
+@mixin small-tablet {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin medium-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large-tablet {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin set-size-auto-line-height($size) {
+  font-size: $size;
+  line-height: $size + 2px;
+}
+
+@mixin text-styling($font-family, $font-size, $font-weight, $color,$letter-spacing:normal) {
+  font-family: $font-family, sans-serif;
+  font-style: normal;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $font-size + 2px;
+}
+
+@mixin line($width:100px,$color:$main-blue-color) {
+  width: $width;
+  height: 8px;
+  background-color: $color;
+  border: none;
+  display: block;
+}
+
+@mixin button-preset($width,$height, $bg-color) {
+  display: block;
+  width: $width;
+  height: $height;
+  background: $bg-color;
+  border-radius: 4px;
+  box-shadow: 1px 1px;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    box-shadow: 1px 1px #000000;
+    filter: brightness(0.8)
+  }
+
+  &:active {
+    position: relative;
+    left: 1px;
+    top: 1px;
+  }
+}
+

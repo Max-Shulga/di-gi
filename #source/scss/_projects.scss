@@ -1,0 +1,115 @@
+@import "constants";
+@import "mixins";
+@import "placeholders";
+
+.projects {
+  background: rgb(43, 64, 116);
+  background: linear-gradient(180deg, rgba(43, 64, 116, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
+
+  .wrapper-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 0;
+    gap: 60px;
+  }
+}
+
+.section-header {
+  @include text-styling($Roboto-Condensed, 24px, 400, $main-white-color);
+
+  @include small-tablet {
+    @include set-size-auto-line-height(48px);
+  }
+}
+
+.line {
+  @include line(50px, $main-white-color);
+
+  @include small-tablet {
+    width: 100px;
+  }
+}
+
+
+.portfolio {
+  display: grid;
+  grid-gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media(max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 641px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.one-portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolio-1 {
+  background: url(images/portfolio-1.png) 100%/cover no-repeat;
+}
+
+.portfolio-2 {
+  background: url(images/portfolio-2.png) 100%/cover no-repeat;
+}
+
+.portfolio-3 {
+  background: url(images/portfolio-3.png) 100%/cover no-repeat;
+}
+
+.portfolio-4 {
+  background: url(images/portfolio-4.png) 100%/cover no-repeat;
+}
+
+.portfolio-element {
+  position: relative;
+  width: 268px;
+  height: 239px;
+  border-radius: 5px;
+
+
+  .portfolio-overlay {
+    display: none;
+  }
+    &:hover {
+      .portfolio-overlay {
+
+      background: rgba(249, 246, 229, 0.8);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 95%;
+      height: 95%;
+      border-radius: 5px;
+      margin: 6px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+      .info {
+        height: 32px;
+        cursor: pointer;
+        margin: 0 5px;
+      }
+}}
+
+.portfolio-text {
+  @include text-styling($Roboto-Condensed, 16px, 700, $main-blue-color, 2px);
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+
