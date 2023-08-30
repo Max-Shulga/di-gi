@@ -1,6 +1,6 @@
-@import "constants";
-@import "mixins";
-@import "placeholders";
+@import "utils/constants";
+@import "utils/mixins";
+
 
 .services {
   background: $main-white-color;
