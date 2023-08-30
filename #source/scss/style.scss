@@ -1,8 +1,7 @@
-@import "reset";
-@import "slick";
-@import "slick-theme";
+@import "presets/reset";
+@import "presets/slick";
+@import "presets/slick-theme";
 @import "common";
-@import "constants";
 @import "header";
 @import "services";
 @import "projects";
